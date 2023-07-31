@@ -32,7 +32,7 @@ async function invokeAction({ action, id, name, email, phone }) {
     case "add":
       if (!name) return console.log("Need enter Contact name");
       const newContact = await contactsMethods.addContact(name, email, phone);
-      console.log(newContact);
+      console.table(newContact);
       break;
 
     case "remove":
