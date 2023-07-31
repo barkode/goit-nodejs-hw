@@ -1,7 +1,21 @@
 // index.js
-const argv = require("yargs").argv;
+// const argv = require("yargs").argv;
+const path = require("path");
+const contactsPath = path.join(__dirname, "contacts.js");
+const contactsMethods = require(contactsPath);
 
-const contactsMethods = require("./contacts");
+const { Command } = require("commander");
+const program = new Command();
+program
+  .option("-a, --action <type>", "choose action")
+  .option("-i, --id <type>", "user id")
+  .option("-n, --name <type>", "user name")
+  .option("-e, --email <type>", "user email")
+  .option("-p, --phone <type>", "user phone");
+
+program.parse(process.argv);
+
+const argv = program.opts();
 
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
@@ -16,6 +30,7 @@ async function invokeAction({ action, id, name, email, phone }) {
       break;
 
     case "add":
+      if (!name) return console.log("Need enter Contact name");
       const newContact = await contactsMethods.addContact(name, email, phone);
       console.log(newContact);
       break;
