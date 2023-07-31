@@ -10,12 +10,14 @@ async function listContacts() {
 }
 
 async function getContactById(contactId) {
+  // const id = String(contactId);
   const allContacts = await listContacts();
   const result = allContacts.find((item) => item.id === contactId);
   return result ?? null;
 }
 
 async function removeContact(contactId) {
+  // const id = String(contactId);
   const contacts = await listContacts();
   const index = contacts.findIndex((item) => item.id === contactId);
   if (index === -1) {
