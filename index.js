@@ -1,5 +1,3 @@
-// index.js
-// const argv = require("yargs").argv;
 const path = require("path");
 const contactsPath = path.join(__dirname, "contacts.js");
 const contactsMethods = require(contactsPath);
