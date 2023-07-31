@@ -3,6 +3,8 @@ const path = require("path");
 const argv = require("yargs").argv;
 const { nanoid } = require("nanoid");
 
+const contactsPath1 = path.join(__dirname, "contacts.json");
+console.log(contactsPath1);
 const contactsPath = path.join(__dirname, "db/contacts_test.json");
 
 async function listContacts() {
@@ -51,4 +53,9 @@ async function removeContact(contactId) {
 // listContacts()
 // getContactById("qdggE76Jtbfd9eWJHrssH1");
 // addContact("Helen Jons", "wfww@ww.wws", "(987) 297-9654");
-removeContact("UauCiDc42FynNn-jSPIsW");
+// removeContact("UauCiDc42FynNn-jSPIsW");
+console.log(argv);
+
+const actionIndex = argv.action;
+
+console.log(actionIndex);
