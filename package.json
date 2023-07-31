@@ -5,8 +5,8 @@
   "homepage": "https://github.com/barkode/goit-nodejs-hw",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Kostiantyn Krysenko",
   "license": "ISC",
